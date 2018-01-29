@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 set -e
 
@@ -11,6 +11,7 @@ wait_app_available() {
     sleep 1
   done; echo " DONE"
 }
+export -f wait_app_available
 
 cleanup() {
   heroku apps:destroy $BASE_APP --confirm $BASE_APP || :
